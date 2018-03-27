@@ -32,3 +32,13 @@ $sizes = Entree::getSizes();
 echo '<pre>';
 print_r($sizes);
 echo '</pre>';
+
+try {
+  $drink = new Entree('Glass of Milk', ['milk', 'syrup']);
+
+  if ($drink->hasIngredient('milk')) {
+    print 'Yummy';
+  }
+} catch (Exception $e) {
+  print "Couldn't create the drink: " . $e->getMessage();
+}
