@@ -2,16 +2,13 @@
 require_once __DIR__ . '/classes/Entree.php';
 
 // создаем экземпляр класса
-$soup = new Entree();
+$soup = new Entree('Chicken Soup', ['chicken', 'water']);
 
-$soup->name = 'Chicken Soup';
-$soup->ingredients = ['chicken', 'water'];
 
 
 // создаем еще экземпляр
-$sandwich = new Entree();
-$sandwich->name = 'Chicken Sandwich';
-$sandwich->ingredients = ['chicken', 'bread'];
+$sandwich = new Entree('Chicken Sandwich', ['chicken', 'bread']);
+
 
 $ingredients = [
   'chicken',
