@@ -2,8 +2,14 @@
 
 class Entree
 {
-  public $name;
-  public $ingredients = [];
+  private $name; // private - припятствует юбому коду за пределами класса обращаться к его свойству
+  protected $ingredients = []; // protected обращаться можно только из подкласса
+
+  // свойство $name объявлено закрытым, ниже предоставляется метод для чтения его записи
+  public function getName()
+  {
+    return $this->name;
+  }
 
   // создаем конструктор
   public function __construct($name, $ingredients)

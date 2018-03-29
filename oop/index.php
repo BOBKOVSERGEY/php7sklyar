@@ -1,8 +1,11 @@
 <?php
+//error_reporting(-1);
 require_once __DIR__ . '/classes/Entree.php';
+require_once __DIR__ . '/classes/ComboMeal.php';
 
 // создаем экземпляр класса
 $soup = new Entree('Chicken Soup', ['chicken', 'water']);
+
 
 
 
@@ -37,8 +40,17 @@ try {
   $drink = new Entree('Glass of Milk', ['milk', 'syrup']);
 
   if ($drink->hasIngredient('milk')) {
-    print 'Yummy';
+    print 'Yummy<br>';
   }
 } catch (Exception $e) {
   print "Couldn't create the drink: " . $e->getMessage();
+}
+
+// составное блюдо
+$combo = new ComboMeal('Soup+Sandwich', [$soup, $sandwich]);
+
+foreach (['chicken', 'water', 'pickles'] as $ing) {
+  if ($combo->hasIngredient($ing)) {
+    print "Something in the combo contains {$ing}<br>";
+  }
 }
