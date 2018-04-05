@@ -10,11 +10,11 @@
 <body>
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
   <select name="lunch[]" multiple>
-    <option value="pork">BBQ PORK BUN</option>
-    <option value="chicken">CHICKEN BUN</option>
-    <option value="lotus">LOTUS SEED BUN</option>
-    <option value="bean">BEAN PASTE BUN</option>
-    <option value="nest">BIRD NEST BUN</option>
+    <option value="Свин">BBQ PORK BUN</option>
+    <option value="Курица">CHICKEN BUN</option>
+    <option value="Лотус">LOTUS SEED BUN</option>
+    <option value="Бен">BEAN PASTE BUN</option>
+    <option value="Нест">BIRD NEST BUN</option>
   </select><br>
   <input type="submit" name="submit">
 </form>
