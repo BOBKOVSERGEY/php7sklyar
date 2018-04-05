@@ -28,6 +28,7 @@ function showForm($errors = [])
   <form method="post" action="$_SERVER[PHP_SELF]">
   Your name: <input type="text" name="my_name">
   <br>
+  Ваш email: <input type="email" name="email">
   <input type="submit" value="Say Hello">
   </form>
 _HTML_;
@@ -40,7 +41,10 @@ function validateForm( ) {
 
   // Add an error message if the name is too short
   if (strlen($_POST['my_name']) < 3) {
-    $errors[  ] = 'Your name must be at least 3 letters long.';
+    $errors[] = 'Your name must be at least 3 letters long.';
+  }
+  if (strlen($_POST['email']) == 0) {
+    $errors[] = 'Your must enter an email address';
   }
 
   // Return the (possibly empty) array of error messages
